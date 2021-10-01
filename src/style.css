@@ -45,3 +45,8 @@ p:hover {
   font-family: "Roboto Mono", monospace;
   text-align: center;
 }
+.coded {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
