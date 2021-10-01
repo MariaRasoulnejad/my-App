@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="src/style.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/dbebcf67f8.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wireframe</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>20°C</h1>
+      <h2>🌞</h2>
+      <hr />
+      <ul class="list">
+        <li id="chooseCity">London</li>
+        <li id="description">Clear</li>
+        <li>
+          <span id="display">15</span>
+        </li>
+        <li id="updated">2:40 PM</li>
+        <li id="newDate">Sunday,22 Aug</li>
+      </ul>
+    </div>
+    <br />
+    <div class="containertwo">
+      <div class="col">
+        <form id="forcastOne">
+          <div class="input-group mb-3">
+            <input
+              type="search"
+              placeholder="Search for a City Here"
+              autofocus="on"
+              autocomplete="off"
+              id="city-input"
+              class="form-control shadow-sm"
+            />
+            <button
+              class="btn btn-outline-secondary"
+              type="submit"
+              id="button-addon2"
+            >
+              🔍
+            </button>
+            <div class="col-3">
+              <button
+                class="btn btn-success w-100"
+                id="current-location-button"
+              >
+                Current
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <br />
+    <p>
+      <i class="far fa-calendar-alt"></i> Forcast for the Next 5 Days
+      <i class="fas fa-temperature-high"></i>
+    </p>
+
+    <div class="card-body">
+      <div class="row">
+        <div class="col forcast">
+          Mon
+          <br />
+          23°C
+        </div>
+        <div class="col forcast">
+          Tue
+          <br />
+          25°C
+        </div>
+        <div class="col forcast">
+          Wed
+          <br />
+          24°C
+        </div>
+        <div class="col forcast">
+          Thu
+          <br />
+          23°C
+        </div>
+        <div class="col forcast">
+          Fri
+          <br />
+          23°C
+        </div>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>
