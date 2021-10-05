@@ -1,11 +1,17 @@
 .container {
+  border: 1px solid #007cb9;
+  border-radius: 50px;
+  padding: 10px 1px 30px;
+  margin-bottom: 10px;
+}
+.partone {
   position: relative;
 
   border-radius: 300px 300px;
   text-align: center;
   padding: 40px 80px;
   display: block;
-  margin: 20px;
+  margin-top: 30px;
   background-color: #fdffcd;
   height: 300px;
 }
