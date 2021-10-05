@@ -56,3 +56,11 @@ p:hover {
   display: block;
   margin: 0 auto;
 }
+#display small {
+  position: relative;
+  top: -20px;
+  font-weight: lighter;
+}
+#display strong {
+  font-size: larger;
+}
