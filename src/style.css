@@ -60,7 +60,11 @@ p:hover {
   position: relative;
   top: -20px;
   font-weight: lighter;
+  font-size: 20px;
 }
 #display strong {
   font-size: larger;
+}
+h2 {
+  margin-left: 10px;
 }
