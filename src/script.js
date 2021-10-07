@@ -1,7 +1,13 @@
 let now = new Date();
 let update = document.querySelector("#updated");
 let hours = now.getHours();
+if (hours < 10) {
+  hours = `0 ${hours}`;
+}
 let minutes = now.getMinutes();
+if (minutes < 10) {
+  minutes = `0 ${minutes}`;
+}
 update.innerHTML = `${hours} : ${minutes}`;
 let calender = document.querySelector("#newDate");
 let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
