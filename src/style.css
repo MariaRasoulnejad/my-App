@@ -76,8 +76,20 @@ h2 {
   font-size: 26px;
 }
 #icon {
+  background-color: #fdffcd;
   border: 2px solid #007cb9;
   border-radius: 40px;
   padding: 1px;
   width: 100px;
+}
+#current-location-button {
+  background-color: #d9bfe1;
+  border: 1px solid #86b7fe;
+}
+#button-addon2 {
+  border: 1px solid #86b7fe;
+  margin-left: 20px;
+}
+#city-input {
+  border: 1px solid white;
 }
