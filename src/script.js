@@ -30,6 +30,7 @@ let months = [
 let month = months[now.getMonth()];
 let second = document.querySelector("#newDate");
 second.innerHTML = `${day} , ${dates} ${month}`;
+
 function displayWeatherCondition(response) {
   console.log(response);
   document.querySelector("#chooseCity").innerHTML = response.data.name;
@@ -43,6 +44,12 @@ function displayWeatherCondition(response) {
 
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function searchCity(city) {
