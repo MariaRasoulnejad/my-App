@@ -33,10 +33,10 @@ second.innerHTML = `${day} , ${dates} ${month}`;
 
 function displayWeatherCondition(response) {
   console.log(response);
+
   document.querySelector("#chooseCity").innerHTML = response.data.name;
-  document.querySelector("#display").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  celTempreture = response.data.main.temp;
+  document.querySelector("#display").innerHTML = Math.round(celTempreture);
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
@@ -75,9 +75,29 @@ function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
+function changefahr(event) {
+  event.preventDefault();
+  fahrlink.classList.add("active");
+  cellink.classList.remove("active");
+  let ftemp = (celTempreture * 9) / 5 + 32;
+  let temElement = document.querySelector("#display");
+  temElement.innerHTML = Math.round(ftemp);
+}
 
+function changecel(event) {
+  event.preventDefault();
+  let temElement = document.querySelector("#display");
+  temElement.innerHTML = Math.round(celTempreture);
+}
+let celTempreture = null;
 let searchForm = document.querySelector("#forcastOne");
 searchForm.addEventListener("submit", handleSubmit);
 
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+let fahrlink = document.querySelector("#flink");
+fahrlink.addEventListener("click", changefahr);
+
+let cellink = document.querySelector("#clink");
+cellink.addEventListener("click", changecel);
