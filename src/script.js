@@ -31,6 +31,33 @@ let month = months[now.getMonth()];
 let second = document.querySelector("#newDate");
 second.innerHTML = `${day} , ${dates} ${month}`;
 
+function displayForcast(response) {
+  let forcast = response.data.daily;
+  let forcastElement = document.querySelector("#forcast");
+  let forcastHTML = `<div class= "row">`;
+
+  forcast.forEach(function (forcastDay) {
+    forcastHTML =
+      forcastHTML +
+      `  
+      <div class="col_2">
+          <div class="forcast_date"> ${forcastDay.dt} </div>
+          <img src="http://openweathermap.org/img/wn/${forcastDay.weather[0].icon}@2x.png" alt="" />
+             
+            <div class = "forcast_temp">${forcastDay.temp}° </div>
+          </div>`;
+  });
+
+  let forcastHTML = forcastHTML + `</div></div>`;
+  forcastElement.innerHTML = forcastHTML;
+}
+
+function getForcast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "96b2b5e5443c7e65bbc05aacca3fdf89";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForcast);
+}
 function displayWeatherCondition(response) {
   console.log(response);
 
@@ -50,6 +77,7 @@ function displayWeatherCondition(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  getForcast(response.data.coord);
 }
 
 function searchCity(city) {
@@ -86,6 +114,8 @@ function changefahr(event) {
 
 function changecel(event) {
   event.preventDefault();
+  fahrlink.classList.remove("active");
+  cellink.classList.add("active");
   let temElement = document.querySelector("#display");
   temElement.innerHTML = Math.round(celTempreture);
 }

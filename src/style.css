@@ -101,3 +101,12 @@ h1 .active {
 h1 .active:hover {
   text-decoration: none;
 }
+.card-body {
+  display: inline;
+}
+.col_2 {
+  display: inline;
+}
+#forcast {
+  display: inline;
+}
