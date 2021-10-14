@@ -31,25 +31,41 @@ let month = months[now.getMonth()];
 let second = document.querySelector("#newDate");
 second.innerHTML = `${day} , ${dates} ${month}`;
 
-function displayForcast(response) {
-  let forcast = response.data.daily;
-  let forcastElement = document.querySelector("#forcast");
-  let forcastHTML = `<div class= "row">`;
+function displayForecast(response) {
+  let forecast = response.data.daily;
 
-  forcast.forEach(function (forcastDay) {
-    forcastHTML =
-      forcastHTML +
-      `  
-      <div class="col_2">
-          <div class="forcast_date"> ${forcastDay.dt} </div>
-          <img src="http://openweathermap.org/img/wn/${forcastDay.weather[0].icon}@2x.png" alt="" />
-             
-            <div class = "forcast_temp">${forcastDay.temp}° </div>
-          </div>`;
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
+      <div class="col-2">
+        <div class="forecast-date">${formatDay(forecastDay.dt)}</div>
+        <img
+          src="http://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png"
+          alt=""
+          width="42"
+        />
+        <div class="forecast-temperatures">
+          <span class="forecast-temperature-max"> ${Math.round(
+            forecastDay.temp.max
+          )}° </span>
+          <span class="forecast-temperature-min"> ${Math.round(
+            forecastDay.temp.min
+          )}° </span>
+        </div>
+      </div>
+  `;
+    }
   });
 
-  let forcastHTML = forcastHTML + `</div></div>`;
-  forcastElement.innerHTML = forcastHTML;
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 function getForcast(coordinates) {
