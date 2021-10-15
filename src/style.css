@@ -1,5 +1,7 @@
 .container {
-  border: 1px solid #007cb9;
+  background-color: seashell;
+  border: 1px solid seashell;
+  box-shadow: silver 10px 10px 10px 10px;
   border-radius: 50px;
   padding: 10px 1px 30px;
   margin-bottom: 10px;
@@ -14,11 +16,6 @@
   margin-top: 30px;
   background-color: #e1e6f8;
   height: 400px;
-}
-.row {
-  display: block;
-  text-align: center;
-  margin: 0 auto;
 }
 
 .list {
@@ -101,12 +98,32 @@ h1 .active {
 h1 .active:hover {
   text-decoration: none;
 }
-.card-body {
-  display: inline;
+
+.weather-forecast-temperature-min {
+  color: grey;
 }
-.col_2 {
-  display: inline;
+#img {
+  background-color: #fdffcd;
+  border: 1px solid #007cb9;
+  border-radius: 40px;
+  padding: 1px;
+  width: 70px;
 }
-#forcast {
-  display: inline;
+
+.col-2 {
+  display: block;
+  text-align: center;
+  margin: auto;
+  background-color: #e1e6f8;
+  border-radius: 60px;
+  border: #e1e6f8;
+  margin-top: 20px;
+  padding: 70px;
+  margin-right: 10px;
+}
+.forecast-date {
+  font-size: larger;
+}
+#totall {
+  background-color: #f0e3e3;
 }
