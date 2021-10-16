@@ -150,3 +150,4 @@ fahrlink.addEventListener("click", changefahr);
 
 let cellink = document.querySelector("#clink");
 cellink.addEventListener("click", changecel);
+searchCity("London");
