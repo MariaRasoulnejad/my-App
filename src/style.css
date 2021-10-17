@@ -95,6 +95,7 @@ h2 {
   margin: 0 auto;
   line-height: 30px;
   margin-left: 90px;
+  width: 70%;
 }
 h1 .active {
   color: grey;
