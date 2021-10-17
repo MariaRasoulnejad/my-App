@@ -118,10 +118,6 @@ function searchLocation(position) {
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 
-function getCurrentLocation(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(searchLocation);
-}
 function changefahr(event) {
   event.preventDefault();
   fahrlink.classList.add("active");
@@ -143,7 +139,6 @@ let searchForm = document.querySelector("#forcastOne");
 searchForm.addEventListener("submit", handleSubmit);
 
 let currentLocationButton = document.querySelector("#current-location-button");
-currentLocationButton.addEventListener("click", getCurrentLocation);
 
 let fahrlink = document.querySelector("#flink");
 fahrlink.addEventListener("click", changefahr);

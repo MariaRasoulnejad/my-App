@@ -1,10 +1,10 @@
 .container {
-  background-color: seashell;
   border: 1px solid seashell;
-  box-shadow: silver 10px 10px 10px 10px;
+  box-shadow: silver 2px 2px 2px 2px;
   border-radius: 50px;
   padding: 10px 1px 30px;
   margin-bottom: 10px;
+  margin-top: 20px;
 }
 .partone {
   position: relative;
@@ -73,7 +73,7 @@ h2 {
   font-size: 26px;
 }
 #icon {
-  background-color: #fdffcd;
+  background-color: #ffe9e3;
   border: 2px solid #007cb9;
   border-radius: 40px;
   padding: 1px;
@@ -86,9 +86,15 @@ h2 {
 #button-addon2 {
   border: 1px solid #86b7fe;
   margin-left: 20px;
+  display: block;
+  margin: 0 auto;
 }
 #city-input {
   border: 1px solid white;
+  display: block;
+  margin: 0 auto;
+  line-height: 30px;
+  margin-left: 90px;
 }
 h1 .active {
   color: grey;
@@ -125,5 +131,7 @@ h1 .active:hover {
   font-size: larger;
 }
 #totall {
-  background-color: #f0e3e3;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUPp5LMiswrX2Q3Ew06cVdGxfqEpFsYOlLUq-rNZzkztLmPTrtKlhxHmfFtr1OXPVdaFI&usqp=CAU);
+  background-size: cover;
+  height: 9px;
 }
