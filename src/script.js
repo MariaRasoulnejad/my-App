@@ -118,31 +118,9 @@ function searchLocation(position) {
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 
-function changefahr(event) {
-  event.preventDefault();
-  fahrlink.classList.add("active");
-  cellink.classList.remove("active");
-  let ftemp = (celTempreture * 9) / 5 + 32;
-  let temElement = document.querySelector("#display");
-  temElement.innerHTML = Math.round(ftemp);
-}
-
-function changecel(event) {
-  event.preventDefault();
-  fahrlink.classList.remove("active");
-  cellink.classList.add("active");
-  let temElement = document.querySelector("#display");
-  temElement.innerHTML = Math.round(celTempreture);
-}
-let celTempreture = null;
 let searchForm = document.querySelector("#forcastOne");
 searchForm.addEventListener("submit", handleSubmit);
 
 let currentLocationButton = document.querySelector("#current-location-button");
 
-let fahrlink = document.querySelector("#flink");
-fahrlink.addEventListener("click", changefahr);
-
-let cellink = document.querySelector("#clink");
-cellink.addEventListener("click", changecel);
 searchCity("London");
